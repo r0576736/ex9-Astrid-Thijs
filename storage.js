@@ -1,12 +1,12 @@
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/Resources";
+var MongoClient = require('mongodb').MongoClient;                               //mongo installeren
+var url = "mongodb://localhost:27017/Resources";                                //hier is onze database (./Resources)
 
-module.exports = {
-    connect: function(error, result){
+module.exports = {                          
+    connect: function(error, result){                                           //connecteren met mongo
         MongoClient.connect(url, function (error, db){
         if (error)
-           throw new Error(error);
-        console.log("Succesfully connected!");
+           throw new Error(error);                                              //lukt niet, error
+        console.log("Succesfully connected!");                                  //lukt wel, succes!
         result(db);
         });
     },
